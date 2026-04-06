@@ -651,48 +651,7 @@ Close
   
 </script>
 
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js')
-  .then(() => console.log("Service Worker Registered"));
-}
-</script>
-<button id="installBtn" style="
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: #d4af37; /* gold color */
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    z-index: 9999;
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-">
-📲 Install App
-</button>
-<script>
-let deferredPrompt;
 
-// PWA install event capture kar
-window.addEventListener('beforeinstallprompt', (e) => {
-    e.preventDefault(); // auto banner stop
-    deferredPrompt = e; // store kar
-});
-
-// Button click event
-document.getElementById('installBtn').addEventListener('click', async () => {
-    if (deferredPrompt) {
-        deferredPrompt.prompt(); // browser prompt dikhao
-        const { outcome } = await deferredPrompt.userChoice;
-        console.log('User choice:', outcome); // accepted / dismissed
-        deferredPrompt = null; // reset
-    } else {
-        alert("App install option abhi available nahi hai");
-    }
-});
-</script>
 </body>
  <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">M.S. Jewellers – Business Handle: msjewellers22
 
