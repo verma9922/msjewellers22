@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">  
-<head><meta charset="UTF-8">
+<head>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#d4af37">
+
+<meta charset="UTF-8">
 
 <title>M.S. Jewellers</title>
 
@@ -645,6 +649,14 @@ Close
   
   }
   
-</script></body> <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">M.S. Jewellers – Business Handle: msjewellers22
+</script>
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js')
+  .then(() => console.log("Service Worker Registered"));
+}
+</script>
+</body>
+ <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">M.S. Jewellers – Business Handle: msjewellers22
 
 </p></h1></html>
