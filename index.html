@@ -245,69 +245,59 @@ footer{
 </head>
   <meta name="keywords" content="M.S. Jewellers, MS Jewellers, ms jewellers22, @msjewellers22, gold jewellery shop"><meta>}
 
-<!-- SMALL SIDE MAP --><div id="mapSidePopup" style="position:fixed;
-
-right:-140px;
-
-bottom:20px;
-
-width:140px;
-
-background:#000;
-
-box-shadow:0 0 15px rgba(0,0,0,0.3);
-
-border-radius:10px 0 0 10px;
-
-overflow:hidden;
-
-transition:0.5s;
-
-z-index:9999;
-
+<!-- SMALL RIGHT MAP POPUP -->
+<div id="mapSidePopup" style="
+  position:fixed;
+  right:-220px;
+  bottom:20px;
+  width:200px;
+  background:white;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+  border-radius:10px;
+  overflow:hidden;
+  transition:0.5s;
+  z-index:9999;
 ">
 
-  <div style="background:#000; color:white; padding:8px; font-size:14px;">
-    📍 Our Location
+  <div style="background:white; color:black; padding:6px; font-size:12px; text-align:center;">
+    📍 Visit Us
+  </div>
 
-  </div>  <iframesrc="https://maps.google.com/maps?q=30.000972,76.730472&z=15&output=embed"
+  <!-- Google Maps iframe with exact coordinates -->
+  <iframe
+    src="https://maps.google.com/maps?q=30.000972,76.730472&z=15&output=embed"
+    width="100%"
+    height="110"
+    style="border:0; display:block; margin:auto;">
+  </iframe>
 
-width="100%"
+  <a href="https://www.google.com/maps?q=30.000972,76.730472" target="_blank" 
+     style="display:block; text-align:center; background:#b8860b; color:white; padding:6px; text-decoration:none; font-size:12px;">
+     Open Exact Location
+  </a>
 
-height="150"
+  <button onclick="closeSidePopup()" style="
+    width:100%;
+    padding:5px;
+    border:none;
+    background:#eee;
+    color:black;
+    font-size:11px;
+    cursor:pointer;">
+    Close
+  </button>
+</div>
 
-style="border:0;">
-
-  </iframe><button onclick="closeSidePopup()" style="
-
-width:100%;
-
-padding:6px;
-
-border:none;
-
-background:#333;
-
-color:white;
-
-font-size:12px;">
-
-Close
-
-  </button></div><script>
-  
-  window.onload = function() {
-  
-    document.getElementById("mapSidePopup").style.right = "0";
-  
+<script>
+  // Show map after page load
+  window.onload = function(){
+    document.getElementById('mapSidePopup').style.right = '10px';
   };
-  
 
-  
-  function closeSidePopup() {
-  
-    document.getElementById("mapSidePopup").style.right = "-280px";
-  
+  function closeSidePopup(){
+    document.getElementById('mapSidePopup').style.right = '-220px';
+  }
+</script>
   
   
 </script><!-- SMALL LEFT CALL BOX --><div id="callBox" style="position:fixed;
