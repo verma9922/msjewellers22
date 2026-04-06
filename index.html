@@ -58,7 +58,44 @@
 <title>M.S. JEWELLERS</title>
 <link rel="icon" type="image/png" href="logo.png">
 
-<style>
+<style
+   margin:0;
+  font-family: 'Poppins', Arial, sans-serif;
+  background:#000;
+  color:#ffffff;
+  section img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  margin: 10px;
+}
+header{
+  background:linear-gradient(to right,#b8860b,#ffd700);
+  padding:25px;
+  text-align:center;
+  color:#000;
+}
+header h1{
+  margin:0;
+  font-size:40px;
+}
+header p{
+  font-size:18px;
+}
+
+.call-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#000;
+  color:#fff;
+  padding:15px 25px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+}
 body{
  
 
@@ -404,7 +441,61 @@ Saturday: 10:30 AM – 4:40 PM <br>
 
 </footer>
 
-</body> <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">
+</body> 
+     <!-- SIDE MAP POPUP -->
+<div id="mapSidePopup" style="
+  position:fixed;
+  right:-350px;
+  top:50%;
+  transform:translateY(-50%);
+  width:300px;
+  background:#000;
+  box-shadow:0 0 15px rgba(0,0,0,0.3);
+  padding:20px;
+  border-radius:10px 0 0 10px;
+  transition:0.5s;
+  z-index:9999;
+">
+
+  <h3 style="color:#b8860b; margin-top:0;">📍 Visit Us</h3>
+  <p style="font-size:14px;">
+    30°00'03.5"N <br>
+    76°43'49.7"E
+  </p>
+
+  <a href="https://www.google.com/maps?q=30.000972,76.730472"
+     target="_blank"
+     style="display:block;
+     margin:10px 0;
+     padding:8px;
+     text-align:center;
+     background:#b8860b;
+     color:white;
+     text-decoration:none;
+     border-radius:5px;">
+     Open Exact Location
+  </a>
+
+  <button onclick="closeSidePopup()" style="
+    width:100%;
+    padding:6px;
+    border:none;
+    background:#333;
+    color:white;
+    border-radius:5px;">
+    Close
+  </button>
+</div>
+
+<script>
+  window.onload = function() {
+    document.getElementById("mapSidePopup").style.right = "0";
+  };
+
+  function closeSidePopup() {
+    document.getElementById("mapSidePopup").style.right = "-350px";
+  }
+</script><p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">
   M.S. Jewellers – Business Handle: msjewellers22
 </p>
 
