@@ -681,7 +681,46 @@ Close
   
 </script>
 
+<script>
+document.querySelectorAll("img").forEach(img => {
+  img.style.cursor = "pointer";
+  img.onclick = function () {
+    window.open(this.src, "_blank");
+  };
+});
+</script>
+   <!-- Image viewer -->
+<div id="imgViewer" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.9);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+">
+  <img id="fullImg" style="max-width:90%; max-height:90%;">
+</div>
 
+<script>
+let viewer = document.getElementById("imgViewer");
+let fullImg = document.getElementById("fullImg");
+
+// sab images ko clickable bana do
+document.querySelectorAll("img").forEach(img => {
+  img.style.cursor = "pointer";
+  img.onclick = function () {
+    viewer.style.display = "flex";
+    fullImg.src = this.src;
+  };
+});
+
+// click anywhere to close
+viewer.onclick = function () {
+  viewer.style.display = "none";
+};
+</script>
 </body>
  <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">M.S. Jewellers – Business Handle: msjewellers22
 
