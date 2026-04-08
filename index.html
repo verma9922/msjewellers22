@@ -283,6 +283,87 @@ footer{
   <p style="margin-top:10px; font-size:14px; color:#777;">Business Handle: msjewellers22</p>
 </footer>
 
+</p></footer> <!-- SIDE MAP POPUP --><div id="mapSidePopup" style="position:fixed;
+
+right:-350px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:300px;
+
+background:#000;
+
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+
+padding:20px;
+
+border-radius:10px 0 0 10px;
+
+transition:0.5s;
+
+z-index:9999;
+
+">
+
+  <h3 style="color:#b8860b; margin-top:0;">📍 Visit Us</h3>  <p style="font-size:14px;">30°00'03.5"N <br>
+
+76°43'49.7"E
+
+  </p><a href="https://www.google.com/maps?q=30.000972,76.730472"
+
+target="_blank"
+
+ style="display:block;
+
+ margin:10px 0;
+
+ padding:8px;
+
+ text-align:center;
+
+ background:#b8860b;
+
+ color:white;
+
+ text-decoration:none;
+
+ border-radius:5px;">
+
+ Open Exact Location
+
+  </a><button onclick="closeSidePopup()" style="
+
+width:100%;
+
+padding:6px;
+
+border:none;
+
+background:#333;
+
+color:white;
+
+border-radius:5px;">
+
+Close
+
+  </button></div><script>
+  
+  window.onload = function() {
+  
+    document.getElementById("mapSidePopup").style.right = "0";
+  
+  };
+  
+
+  
+  function closeSidePopup() {
+  
+    document.getElementById("mapSidePopup").style.right = "-350px";
+  
+  }
 <script>
 const productsData = {
   "gents-ring": ["images/jewel12.jpg"],
@@ -317,50 +398,6 @@ viewer.onclick = function(){ viewer.style.display='none'; };
 
 </script>
 
-<!-- SMALL SIDE MAP -->
-<div id="mapSidePopup" style="
-  position:fixed;
-  right:-280px;
-  bottom:20px;
-  width:260px;
-  background:#ffffff;
-  box-shadow:0 0 15px rgba(0,0,0,0.3);
-  border-radius:10px 0 0 10px;
-  overflow:hidden;
-  transition:0.5s;
-  z-index:9999;
-">
-
-  <div style="background:#b8860b; color:white; padding:8px; font-size:14px;">
-    📍 Visit Us
-  </div>
-
-  <iframe
-    src="https://maps.google.com/maps?q=30.000972,76.730472&z=15&output=embed"
-    width="100%"
-    height="150"
-    style="border:0;">
-  </iframe>
-
-  <button onclick="closeSidePopup()" style="
-    width:100%;
-    padding:6px;
-    border:none;
-    background:#333;
-    color:white;
-    font-size:12px;">
-    Close
-  </button>
-</div>
-
-<script>
-  window.onload = function() {
-    document.getElementById("mapSidePopup").style.right = "0";
-  };
-
-  function closeSidePopup() {
-    document.getElementById("mapSidePopup").style.right = "-280px";
-  }
 
 </body>
 </html>
