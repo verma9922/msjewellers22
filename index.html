@@ -321,156 +321,80 @@ Our mission is to provide the best quality jewellery at the best prices.
   </p>
 </section>
 
-  <section> 
-  <h2>Our Collections</h2>  
-
-    <div class="collections">  </section> 
-  <section>
-      <h2>GENTS RINGS💍</h2> 
-    <img src="images/jewel12.jpg" alt="Designer Gold Ring"> 
-  </section> 
-  <section> 
-    <h2>LADIES RINGS💍</h2>  
-    <img src="images/jewel17.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring1.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring2.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring3.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring4.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring5.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring6.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring7.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring8.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring9.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring10.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring11.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring12.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring13.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring14.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring15.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring16.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring17.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring18.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring19.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring20.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring21.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring22.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring23.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring24.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring25.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring26.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring27.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring28.jpg" alt="Traditional Gold Ring">
-    <img src="images/ring29.jpg" alt="Traditional Gold Ring">
-
-  </section>
-  <section>
-
-  <h2>NECKLACE📿</h2>
-
-  <img src="images/jewel1.jpg" alt="Gold Necklace">
-
-  <img src="images/jewel3.jpg" alt="Queen set">
-
-  <img src="images/jewel4.jpg" alt="Bridal Jewellery Set">
-
-</section>
-
 <section>
+  <section id="filterMenu">
+<h2 style="text-align:center; color:#b8860b;">Our Collections</h2>
+<div style="text-align:center; margin-bottom:20px;">
+<button onclick="filterCategory('all')">Show All</button>
+<button onclick="filterCategory('gents-ring')">Gents Rings</button>
+<button onclick="filterCategory('ladies-ring')">Ladies Rings</button>
+<button onclick="filterCategory('necklace')">Necklaces</button>
+<button onclick="filterCategory('tops')">Tops</button>
+<button onclick="filterCategory('gents-kada')">Gents Kada</button>
+<button onclick="filterCategory('bangles')">Bangles</button>
+<button onclick="filterCategory('chains')">Chains</button>
+<button onclick="filterCategory('gents-murki')">Gents Murki</button>
+<button onclick="filterCategory('ring-pairs')">Ring Ceremony Pairs</button>
+</div>
 
-  <h2>TOPS</h2>
+<section class="products" style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
+  <!-- GENTS RINGS -->
+  <div class="product" data-category="gents-ring"><img src="images/jewel12.jpg" alt="Gents Ring"></div>
+  
+  <!-- LADIES RINGS -->
+  <div class="product" data-category="ladies-ring"><img src="images/jewel17.jpg" alt="Ladies Ring"></div>
+  <div class="product" data-category="ladies-ring"><img src="images/ring1.jpg" alt="Ladies Ring"></div>
+  <div class="product" data-category="ladies-ring"><img src="images/ring2.jpg" alt="Ladies Ring"></div>
+  <div class="product" data-category="ladies-ring"><img src="images/ring3.jpg" alt="Ladies Ring"></div>
 
-  <img src="images/jewel2.jpg" alt="gold tops">
+  <!-- NECKLACES -->
+  <div class="product" data-category="necklace"><img src="images/jewel1.jpg" alt="Necklace"></div>
+  <div class="product" data-category="necklace"><img src="images/jewel3.jpg" alt="Necklace"></div>
+  <div class="product" data-category="necklace"><img src="images/jewel4.jpg" alt="Necklace"></div>
 
-    <img src="images/jewel5.jpg" alt="Gold Earrings">
+  <!-- TOPS -->
+  <div class="product" data-category="tops"><img src="images/jewel2.jpg" alt="Tops"></div>
+  <div class="product" data-category="tops"><img src="images/jewel5.jpg" alt="Tops"></div>
 
-   <img src="images/jewel7.jpg" alt="Traditional Jhumka">
+  <!-- GENTS KADA -->
+  <div class="product" data-category="gents-kada"><img src="images/jewel13.jpg" alt="Gents Kada"></div>
+  <div class="product" data-category="gents-kada"><img src="images/jewel14.jpg" alt="Gents Kada"></div>
 
-    <img src="images/jewel8.jpg" alt="Designer Earrings">
+  <!-- BANGLES -->
+  <div class="product" data-category="bangles"><img src="images/jewel15.jpg" alt="Bangles"></div>
 
-   <img src="images/jewel18.jpg" alt="Gold Pendant Design">
+  <!-- CHAINS -->
+  <div class="product" data-category="chains"><img src="images/jewel16.jpg" alt="Chains"></div>
 
-  <img src="images/Tops1.jpg" alt="new tops">
-<img src="images/tops2.jpg" alt="new jhumka">
-<img src="images/tops3.jpg" alt="treditional earrings">
+  <!-- GENTS MURKI -->
+  <div class="product" data-category="gents-murki"><img src="images/jewel6.jpg" alt="Gents Murki"></div>
+  <div class="product" data-category="gents-murki"><img src="images/jewel9.jpg" alt="Gents Murki"></div>
+  <div class="product" data-category="gents-murki"><img src="images/jewel10.jpg" alt="Gents Murki"></div>
 
-<img src="images/tops4.jpg" alt="treditional earrings">
-
-<img src="images/tops5.jpg" alt="treditional earrings">
-
-<img src="images/tops6.jpg" alt="treditional earrings">
-
-<img src="images/tops7.jpg" alt="treditional earrings">
-
-<img src="images/tops8.jpg" alt="treditional earrings">
-
-<img src="images/tops9.jpg" alt="treditional earrings">
-
-<img src="images/tops10.jpg" alt="treditional earrings">
-
-<img src="images/tops11.jpg" alt="treditional earrings">
-
-<img src="images/tops12.jpg" alt="treditional earrings">
-
-<img src="images/tops13.jpg" alt="treditional earrings">
-
-<img src="images/tops14.jpg" alt="treditional earrings">
-
-
-
-
-
-
+  <!-- RING CEREMONY PAIRS -->
+  <div class="product" data-category="ring-pairs"><img src="images/jewel11.jpg" alt="Ring Pairs"></div>
 </section>
 
-<section>
+<script>
+function filterCategory(cat){
+  const items = document.querySelectorAll('.product');
+  items.forEach(item=>{
+    item.style.display = (cat==='all'||item.dataset.category===cat)?'block':'none';
+  });
+}
 
-  <h2>GENTS KADA🕳️</h2>
-
-     <img src="images/jewel13.jpg" alt="Gold Crown Bracelet">
-
-   <img src="images/jewel14.jpg" alt="Lucky Name Bracelet">
-
+// Image viewer for all products
+let viewer = document.getElementById("imgViewer");
+let fullImg = document.getElementById("fullImg");
+document.querySelectorAll('.products img').forEach(img=>{
+  img.onclick=function(){
+    viewer.style.display='flex';
+    fullImg.src=this.src;
+  }
+});
+viewer.onclick=function(){viewer.style.display='none';};
+</script>
 </section>
-
-<section>
-
-  <h2>BANGLES۝۝</h2>
-
-  <img src="images/jewel15.jpg" alt="Gold Kada Design">
-
-
-
-</section>
-
-<section>
-
-  <h2>CHAINS</h2>
-
-  <img src="images/jewel16.jpg" alt="Gold Name Necklace">
-
-
-
-</section>
-
-  <section>
-
-    <h2>GENTS MURKI</h2>
-
-    <img src="images/jewel6.jpg" alt="Gold Hoops">
-
-    <img src="images/jewel9.jpg" alt="Small Gold Hoops">
-
-      <img src="images/jewel10.jpg" alt="Gold Stud Earrings">
-
-  </section>
-
-<section>
-<h2>RING CEREMONEY PAIRS</h2>
-
-<img src="images/jewel11.jpg" alt="Gold Rings">
-
-</section>
-
 <section> 
  <h2>Our Services</h2>  <p class="services">✔ Gold Jewellery<br>
 
