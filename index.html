@@ -1,18 +1,12 @@
-{<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>M.S. Jewellers</title>
-
 <link rel="icon" type="image/png" href="logo.png">
-
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#d4af37">
-
 <meta name="google-site-verification" content="Zgz_tCwIN8ebthwj6M8hb6dxmxGbfOO1Qxk-nH5rJNU" />
 
 <script type="application/ld+json">
@@ -25,68 +19,56 @@
 }
 </script>
 
-</head>
-
-<html lang="en">  
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M.S. JEWELLERS</title>
-<link rel="icon" type="image/png" href="logo.png">
-
-  <style>
-
-  body{
-
+<style>
+body{
   margin:0;
-
   font-family: 'Poppins', Arial, sans-serif;
-
   background:#000;
-
-  color:#ffffff;
-    /* ===== BUTTON STYLE (JEWELLERY THEME) ===== */
-#filterMenu{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  justify-content:center;
-  margin-top:20px;
+  color:#fff;
 }
 
-#filterMenu button{
-  padding:14px 22px;
-  font-size:16px;
-  border:none;
-  border-radius:25px;
+/* ===== HEADER ===== */
+header{
   background:linear-gradient(to right,#b8860b,#ffd700);
+  padding:25px;
+  text-align:center;
   color:#000;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 4px 12px rgba(255,215,0,0.4);
-  transition:0.3s;
 }
+header h1{ margin:0; font-size:40px; }
+header p{ font-size:18px; }
 
-#filterMenu button:hover{
-  background:linear-gradient(to right,#ffd700,#b8860b);
-  transform:scale(1.08);
-  box-shadow:0 6px 18px rgba(255,215,0,0.7);
+/* ===== CALL BUTTON ===== */
+.call-btn, #callBox a{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#000;
+  color:#fff;
+  padding:15px 25px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+  z-index:9999;
+  font-size:14px;
 }
 
 /* ===== PRODUCTS GRID ===== */
 .products{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
-  padding:20px;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr); /* mobile default */
+  gap:10px;
+  padding:10px;
+  justify-items:center;
 }
 
-/* ===== PRODUCT IMAGES ===== */
 .products img{
-  width:48%;
-  height:180px;
+  width:100%;
+  height:140px;
   object-fit:cover;
-  border-radius:12px;
+  border-radius:10px;
   box-shadow:0 4px 10px rgba(255,215,0,0.4);
+  animation: fadeIn 0.5s ease;
+  cursor:pointer;
 }
 
 .products img:hover{
@@ -94,396 +76,133 @@
   box-shadow:0 10px 25px rgba(255,215,0,0.7);
 }
 
-header{
-
-  background:linear-gradient(to right,#b8860b,#ffd700);
-
-  padding:25px;
-
-  text-align:center;
-
-  color:#000;
-
+@keyframes fadeIn{
+  from{ opacity:0; transform: scale(0.9); }
+  to{ opacity:1; transform: scale(1); }
 }
 
-header h1{
+/* ===== MEDIA QUERIES ===== */
+@media (min-width: 600px){ .products{ grid-template-columns: repeat(4,1fr); } }
+@media (min-width: 992px){ .products{ grid-template-columns: repeat(5,1fr); } }
+@media (min-width: 1200px){ .products{ grid-template-columns: repeat(6,1fr); } }
 
-  margin:0;
-
-  font-size:40px;
-
-}
-
-header p{
-
-  font-size:18px;
-
-}
-
-
-
-.call-btn{
-
-  position:fixed;
-
-  bottom:20px;
-
-  right:20px;
-
-  background:#000;
-
-  color:#fff;
-
-  padding:15px 25px;
-
-  border-radius:50px;
-
-  text-decoration:none;
-
-  font-weight:bold;
-
-}
-
-
-
+/* ===== OTHER SECTIONS ===== */
 section{
-
   padding:60px 20px;
-
   max-width:1200px;
-
   margin:auto;
-
 }
-
-
-
 h2{
-
   text-align:center;
-
   color:#b8860b;
-
   margin-bottom:30px;
-
   font-size:32px;
-
 }
-
-
-
 .about, .services, .why{
-
   text-align:center;
-
   line-height:1.8;
-
   font-size:18px;
-
-<p style="font-size:15px;">
-
-  Official Business Handle: <strong>@msjewellers22</strong>
-
-</p>
-
-
-
 }
+.contact{ background:#000; text-align:center; }
+footer{ background:#000; color:#fff; text-align:center; padding:15px; }
 
-
-
-.collections{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:20px;
-
+/* ===== FULLSCREEN IMAGE VIEWER ===== */
+#imgViewer{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.9);
   justify-content:center;
-
-<a href="https://ibb.co/XxWyq21R"><img src="https://i.ibb.co/XxWyq21R/jewel2.jpg" alt="jewel2" border="0"></a>
-
+  align-items:center;
+  z-index:9999;
 }
-
-
-
-.collections img{
-
-  width:260px;
-
-  height:260px;
-
-  object-fit:cover;
-
-  border-radius:15px;
-
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);https://ibb.co/vCTrqxWx
-
-}
-
-
-
-.contact{
-
-  background:#000;
-
-  text-align:center;
-
-}
-
-
-
-footer{
-
-  background:#000;
-
-  color:#fff;
-
-  text-align:center;
-
-  padding:15px;
-
-}
-
-/* 🔥 Default (Mobile) */
-.products{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr); /* 📱 mobile = 3 */
-  gap:10px;
-  padding:10px;
-}
-
-/* 📲 Tablet */
-@media (min-width: 600px){
-  .products{
-    grid-template-columns: repeat(4, 1fr); /* tablet = 4 */
-  }
-}
-
-/* 💻 Laptop */
-@media (min-width: 992px){
-  .products{
-    grid-template-columns: repeat(5, 1fr); /* laptop = 5 */
-  }
-}
-
-/* 📺 TV / Big Screen */
-@media (min-width: 1200px){
-  .products{
-    grid-template-columns: repeat(6, 1fr); /* tv = 6 */
-  }
-}
-
-/* Image style */
-.products img{
-  width:100%;
-  height:140px;
-  object-fit:cover;
+#imgViewer img{
+  max-width:90%;
+  max-height:90%;
   border-radius:10px;
+}
 
-</script>
+/* ===== SMALL MAP POPUP ===== */
+#mapSidePopup{
+  position:fixed;
+  right:-220px;
+  bottom:20px;
+  width:200px;
+  background:black;
+  box-shadow:0 0 10px rgba(0,0,0,0.2);
+  border-radius:10px;
+  overflow:hidden;
+  transition:0.5s;
+  z-index:9999;
+}
+#mapSidePopup div, #mapSidePopup a, #mapSidePopup button{
+  font-size:12px;
+}
+</style>
+</head>
+<body>
 
+<!-- CALL BUTTON LEFT -->
+<div id="callBox">
+  <a href="tel:9466218122">📞 Call Now</a>
+</div>
 
-</script><!-- SMALL LEFT CALL BOX --><div id="callBox" style="position:fixed;
-
-left:20px;
-
-bottom:20px;
-
-background:#b8860b;
-
-color:white;
-
-padding:10px 15px;
-
-border-radius:30px;
-
-box-shadow:0 0 10px rgba(0,0,0,0.3);
-
-z-index:9999;
-
-font-size:14px;
-
-">
-
-<a href="tel:9466218122" style="
-
-color:white;
-
-text-decoration:none;
-
-font-weight:bold;
-
-">
-
-📞 Call Now
-
-  </a></div>
-  <body>
-
-    <div style="background:#000; text-align:center; padding:10px;">  <strong style="color:#ffffff; font-size:16px;">Director: Sandeep Verma Laththas
-
-  </strong>
-  </div>
-    <header>  
-      <h1>M.S. JEWELLERS</h1>
-      <p> 
-      <p>Pure Gold • Diamond • Silver Jewellery</p>
-      <title>M.S. Jewellers | Gold Jewellery Shop | ms jewellers22</title>
+<header>
+  <h1>M.S. JEWELLERS</h1>
+  <p>Pure Gold • Diamond • Silver Jewellery</p>
 </header>
 
-<h1 style="color:#b8860b; font-size:32px;">
-</h1>
 <section>
-<h2> M.S. Jewellers – Your Family Jeweller<h2>
- <h2>Welcome to M.S. Jewellers<h2>
- <h2>🙏"सादर आमंत्रण"🙏</h2>
-
-<p style="margin-top:6px; font-size:15px; color:#666;">
-Official Business Handle: <strong>msjewellers22</strong>
-
-</p>  <p class="about">M.S. Jewellers is a trusted and premium jewellery store where you can find
-authentic gold, diamond, and silver jewellery.  
-Our mission is to provide the best quality jewellery at the best prices.
-
-  </p>
+<h2> M.S. Jewellers – Your Family Jeweller </h2>
+<h2>Welcome to M.S. Jewellers</h2>
+<h2>🙏"सादर आमंत्रण"🙏</h2>
+<p class="about">M.S. Jewellers is a trusted and premium jewellery store where you can find authentic gold, diamond, and silver jewellery. Our mission is to provide the best quality jewellery at the best prices.</p>
 </section>
-   
+
+<section id="ourCollection">
+<h2>Our Collection</h2>
+<div id="filterMenu">
+  <button onclick="showCategory('gents-ring')">Gents Rings</button>
+  <button onclick="showCategory('ladies-ring')">Ladies Rings</button>
+  <button onclick="showCategory('necklace')">Necklaces</button>
+  <button onclick="showCategory('tops')">Tops</button>
+  <button onclick="showCategory('gents-kada')">Gents Kada</button>
+  <button onclick="showCategory('bangles')">Bangles</button>
+  <button onclick="showCategory('chains')">Chains</button>
+  <button onclick="showCategory('gents-murki')">Gents Murki</button>
+  <button onclick="showCategory('ring-pairs')">Ring Ceremony Pairs</button>
+</div>
+</section>
+
+<section class="products"></section>
+
 <section>
-  
-<section id="ourCollection" style="text-align:center;">
-  <h2>Our Collection</h2>
-<p style="color: #ffffff; font-size: 18px; text-align: center; margin-top: 10px; font-weight: bold; letter-spacing: 0.5px;">
-  Click below to view designs 👇
-</p>
-<p>
-डिज़ाइन देखने के लिए नीचे क्लिक करें👇
-</p>
-  <div id="filterMenu">
-    <button onclick="showCategory('gents-ring')">Gents Rings</button>
-    <button onclick="showCategory('ladies-ring')">Ladies Rings</button>
-    <button onclick="showCategory('necklace')">Necklaces</button>
-    <button onclick="showCategory('tops')">Tops</button>
-    <button onclick="showCategory('gents-kada')">Gents Kada</button>
-    <button onclick="showCategory('bangles')">Bangles</button>
-    <button onclick="showCategory('chains')">Chains</button>
-    <button onclick="showCategory('gents-murki')">Gents Murki</button>
-    <button onclick="showCategory('ring-pairs')">Ring Ceremony Pairs</button>
-  </div>
+<h2>Our Services</h2>
+<p class="services">✔ Gold Jewellery<br>✔ Diamond Jewellery<br>✔ Silver Jewellery<br>✔ Bridal Jewellery<br>✔ Custom Design Jewellery<br>✔ Jewellery Repair & Exchange</p>
 </section>
 
-<section class="products">
-  
+<section>
+<h2>Why Choose Us</h2>
+<p class="why">✔ 100% Hallmarked Jewellery <br>✔ Trusted by Hundreds of Customers <br>✔ Best Price Guarantee <br>✔ Beautiful Designs <br>✔ Honest and Transparent Dealing</p>
 </section>
-<section> 
- <h2>Our Services</h2>  <p class="services">✔ Gold Jewellery<br>
 
-✔ Diamond Jewellery<br>
-
-✔ Silver Jewellery<br>
-
-✔ Bridal Jewellery<br>
-
-✔ Custom Design Jewellery<br>
-
-✔ Jewellery Repair & Exchange
-
-  </p>
-</section>
-<section>  <h2>Why Choose Us</h2>  <p class="why">✔ 100% Hallmarked Jewellery <br>
-
-✔ Trusted by Hundreds of Customers <br>
-
-✔ Best Price Guarantee <br>
-
-✔ Beautiful Designs <br>
-
-✔ Honest and Transparent Dealing
-
-  </p>
-</section>
-<section style="background:#000; padding:40px; text-align:center;">
-  <h2 style="color:#b8860b;">📍 Our Location</h2>
-<a href="https://www.google.com/maps?q=30.000972,76.730472"
-
-target="_blank" 
-
- style="display:inline-block; margin-top:15px; padding:10px 20px; background:#b8860b; color:white; text-decoration:none; border-radius:5px;">
-
- 📍 View Exact Location on Google Maps
-
-  </a> <h3 style="color:#b8860b;">🕒 Opening Hours</h3>  <p>Monday: 10:30 AM – 4:40 PM <br>
-
-<p>Tuesday: 10:30 AM – 4:40 PM <br>
-
-<p>Wednesday: 10:30 AM – 4:40 PM <br>
-
-<p>Thursday: 10:30 AM – 4:40 PM <br>
-
-<p>Friday: 10:30 AM – 4:40 PM<br>
-
-<p>Saturday: 10:30 AM – 4:40 PM <br>
-
-<p>Sunday: Closed <br>
-
-<p>  
-</p>
-</section>
-</section>
-<section class="contact"><section style="background:#000;
-
-color:#ffffff;
-
-padding:40px 20px;
-
-text-align:center;
-
-border-top:1px solid #eee;
-
-">
-
-  <h2 style="color:#b8860b; margin-bottom:20px;">Contact Us
-
-  </h2>  <p><strong>Director:</strong> sandeep verma laththas</p> 
-
- <p><strong>Shop Name:</strong>
-
- M.S.JEWELLERS</p>
-  <p><strong>Business Handle:</strong>
-
- msjewellers22</p>
-  <p><strong>Phone:</strong> <a href="tel:9466218122"
-
- style="color:#b8860b;
- text-decoration:none;
- font-weight:bold;">
-
-  9466218122
-
-</a>
-
-  </p>  <p style="margin-top:15px; font-size:14px; color:#555;">For any jewellery enquiry, call us anytime between 10:00AM-7:00PM
-
-  </p>
-</section>
-  
-</section> 
-</p>
-</section>
-   
-   <div id="imgViewer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; justify-content:center; align-items:center;">
-  <img id="fullImg" style="max-width:90%; max-height:90%;">
-     
+<!-- FULLSCREEN IMAGE VIEWER -->
+<div id="imgViewer">
+  <img id="fullImg">
 </div>
-   
-   
-   <footer>© 2026 m.s. jewellers| All Rights Reserved
 
-<p style="margin-top:10px; font-size:14px; color:#777;">Business Handle: msjewellers22
-
+<!-- MAP POPUP -->
+<div id="mapSidePopup">
+  <div>📍 Visit Us</div>
+  <iframe src="https://maps.google.com/maps?q=30.000972,76.730472&z=15&output=embed" width="100%" height="110" style="border:0; display:block; margin:auto;"></iframe>
+  <a href="https://www.google.com/maps?q=30.000972,76.730472" target="_blank">Open Exact Location</a>
+  <button onclick="closeSidePopup()">Close</button>
 </div>
-   <script>
+
+<footer>© 2026 M.S. Jewellers | Business Handle: msjewellers22</footer>
+
+<script>
 const productsData = {
   "gents-ring": ["images/jewel12.jpg"],
   "ladies-ring": ["images/jewel17.jpg","images/ring1.jpg","images/ring2.jpg","images/ring3.jpg"],
@@ -505,19 +224,17 @@ function showCategory(cat){
   productsData[cat].forEach(src=>{
     const img = document.createElement('img');
     img.src = src;
-    
-    img.onclick = function(){
-      fullImg.src = this.src;
-      viewer.style.display = 'flex';
-    };
-
+    img.onclick = function(){ fullImg.src = this.src; viewer.style.display='flex'; };
     productsContainer.appendChild(img);
   });
 }
 
 viewer.onclick = function(){ viewer.style.display='none'; };
-</script>
-</body>
- <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">M.S. Jewellers – Business Handle: msjewellers22
 
-</p></h1></html>
+// MAP popup functions
+window.onload = function(){ document.getElementById('mapSidePopup').style.right = '10px'; };
+function closeSidePopup(){ document.getElementById('mapSidePopup').style.right = '-220px'; }
+</script>
+
+</body>
+</html>
