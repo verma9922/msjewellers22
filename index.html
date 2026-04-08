@@ -728,6 +728,25 @@ overlay.onwheel = function(e) {
   }
   zoomedImg.style.transform = "scale(" + currentScale + ")";
 };
+<script>
+// keyboard zoom disable (+, -, Ctrl +, Ctrl -)
+document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=')) {
+        e.preventDefault();
+    }
+});
+
+// mouse wheel zoom disable (Ctrl + scroll)
+document.addEventListener('wheel', function(e) {
+    if (e.ctrlKey) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+// pinch zoom mobile disable
+document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+});
 </script>
 </body>
  <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">M.S. Jewellers – Business Handle: msjewellers22
