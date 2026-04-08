@@ -621,6 +621,52 @@ viewer.onclick = function () {
   viewer.style.display = "none";
 };
 </script>
+<!-- Zoom overlay -->
+<div id="zoomOverlay" style="
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+">
+  <img id="zoomedImg" style="max-width:90%; max-height:90%; transition: transform 0.3s;">
+</div>
+
+<script>
+let overlay = document.getElementById("zoomOverlay");
+let zoomedImg = document.getElementById("zoomedImg");
+
+// sab images ko clickable karo
+document.querySelectorAll("img").forEach(img => {
+  img.style.cursor = "zoom-in";
+  img.onclick = function () {
+    zoomedImg.src = this.src;
+    zoomedImg.style.transform = "scale(1)";
+    overlay.style.display = "flex";
+  };
+});
+
+// click overlay to close
+overlay.onclick = function () {
+  overlay.style.display = "none";
+};
+
+// optional: mouse wheel zoom
+overlay.onwheel = function(e) {
+  e.preventDefault();
+  let currentScale = parseFloat(zoomedImg.style.transform.replace("scale(","").replace(")","")) || 1;
+  if(e.deltaY < 0) {
+    currentScale += 0.1;
+  } else {
+    currentScale -= 0.1;
+    if(currentScale < 1) currentScale = 1;
+  }
+  zoomedImg.style.transform = "scale(" + currentScale + ")";
+};
+</script>
 </body>
  <p style="text-align:center; font-size:14px; color:#777; margin-top:20px;">M.S. Jewellers – Business Handle: msjewellers22
 
