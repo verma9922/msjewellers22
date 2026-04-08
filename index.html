@@ -582,36 +582,6 @@ Close
 </script>
 
 <script>
-// Page load hone par sab images hide
-window.onload = function(){
-  document.querySelectorAll('.product').forEach(item => {
-    item.style.display = 'none';
-  });
-}
-
-// Filter function
-function filterCategory(cat){
-  const items = document.querySelectorAll('.product');
-  items.forEach(item => {
-    item.style.display = (item.dataset.category === cat) ? 'block' : 'none';
-  });
-}
-
-// Image viewer
-let viewer = document.getElementById("imgViewer");
-let fullImg = document.getElementById("fullImg");
-
-document.querySelectorAll('.product img').forEach(img => {
-  img.onclick = function(){
-    viewer.style.display = 'flex';
-    fullImg.src = this.src;
-  }
-});
-
-viewer.onclick = function(){
-  viewer.style.display = 'none';
-};
-</script>
 document.querySelectorAll("img").forEach(img => {
   img.style.cursor = "pointer";
   img.onclick = function () {
