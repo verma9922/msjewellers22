@@ -1,4 +1,39 @@
-<!DOCTYPE html>
+/* 🔥 Default (Mobile) */
+.products{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr); /* 📱 mobile = 3 */
+  gap:10px;
+  padding:10px;
+}
+
+/* 📲 Tablet */
+@media (min-width: 600px){
+  .products{
+    grid-template-columns: repeat(4, 1fr); /* tablet = 4 */
+  }
+}
+
+/* 💻 Laptop */
+@media (min-width: 992px){
+  .products{
+    grid-template-columns: repeat(5, 1fr); /* laptop = 5 */
+  }
+}
+
+/* 📺 TV / Big Screen */
+@media (min-width: 1200px){
+  .products{
+    grid-template-columns: repeat(6, 1fr); /* tv = 6 */
+  }
+}
+
+/* Image style */
+.products img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+}<!DOCTYPE html>
 
 <html lang="en">
 
@@ -246,19 +281,43 @@ footer{
 
 }
 
+/* 🔥 Default (Mobile) */
 .products{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);  /* 👈 3 images */
+  grid-template-columns: repeat(3, 1fr); /* 📱 mobile = 3 */
   gap:10px;
   padding:10px;
 }
 
+/* 📲 Tablet */
+@media (min-width: 600px){
+  .products{
+    grid-template-columns: repeat(4, 1fr); /* tablet = 4 */
+  }
+}
+
+/* 💻 Laptop */
+@media (min-width: 992px){
+  .products{
+    grid-template-columns: repeat(5, 1fr); /* laptop = 5 */
+  }
+}
+
+/* 📺 TV / Big Screen */
+@media (min-width: 1200px){
+  .products{
+    grid-template-columns: repeat(6, 1fr); /* tv = 6 */
+  }
+}
+
+/* Image style */
 .products img{
   width:100%;
   height:140px;
   object-fit:cover;
   border-radius:10px;
 }
+
 </style>
 
 </head>
