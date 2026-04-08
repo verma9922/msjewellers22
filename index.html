@@ -104,6 +104,68 @@ header p{
   font-size:18px;
 }
 
+<!-- SMALL SIDE MAP --><div id="mapSidePopup" style="position:fixed;
+
+right:-280px;
+
+bottom:20px;
+
+width:260px;
+
+background:#000;
+
+box-shadow:0 0 15px rgba(0,0,0,0.3);
+
+border-radius:10px 0 0 10px;
+
+overflow:hidden;
+
+transition:0.5s;
+
+z-index:9999;
+
+">
+
+  <div style="background:#000; color:white; padding:8px; font-size:14px;">📍 visit us
+
+  </div>  <iframesrc="https://maps.google.com/maps?q=30.000972,76.730472&z=15&output=embed"
+
+width="100%"
+
+height="150"
+
+style="border:0;">
+
+  </iframe><button onclick="closeSidePopup()" style="
+
+width:100%;
+
+padding:6px;
+
+border:none;
+
+background:#333;
+
+color:white;
+
+font-size:12px;">
+
+Close
+
+  </button></div><script>
+  
+  window.onload = function() {
+  
+    document.getElementById("mapSidePopup").style.right = "0";
+  
+  };
+  
+
+  
+  function closeSidePopup() {
+  
+    document.getElementById("mapSidePopup").style.right = "-280px"
+
 /* ===== CALL BUTTON ===== */
 .call-btn{
   position:fixed;
@@ -314,67 +376,6 @@ function showCategory(cat){
 viewer.onclick = function(){ viewer.style.display='none'; };
 
 
-
-
-<!-- SMALL SIDE MAP POPUP -->
-<div id="mapSidePopup" style="
-  position:fixed;
-  right:-280px;
-  bottom:20px;
-  width:260px;
-  background:#000;
-  box-shadow:0 0 15px rgba(0,0,0,0.3);
-  border-radius:10px 0 0 10px;
-  overflow:hidden;
-  transition:0.5s;
-  z-index:9999;
-">
-
-  <div style="background:#000; color:white; padding:8px; font-size:14px;">
-    📍 Visit Us
-  </div>  
-
-  <iframe src="https://maps.google.com/maps?q=30.000972,76.730472&z=15&output=embed"
-          width="100%"
-          height="150"
-          style="border:0;">
-  </iframe>
-
-  <button onclick="closeSidePopup()" style="
-    width:100%;
-    padding:6px;
-    border:none;
-    background:#333;
-    color:white;
-    font-size:12px;
-    cursor:pointer;
-  ">
-    Close
-  </button>
-</div>
-
-<script>
-// Function to open the side popup
-function openSidePopup(){
-  const popup = document.getElementById('mapSidePopup');
-  if(popup.style.right === '0px'){
-    popup.style.right = '-280px'; // If already open, close it
-  } else {
-    popup.style.right = '0'; // Open popup
-  }
-}
-
-// Function to close the side popup
-function closeSidePopup(){
-  document.getElementById('mapSidePopup').style.right = '-280px';
-}
-
-// Optional: Auto open after 1 second (can remove if not needed)
-window.onload = function(){
-  setTimeout(()=>{
-    document.getElementById('mapSidePopup').style.right = '0';
-  }, 1000);
-};
 </script>
 </body>
 </html>
