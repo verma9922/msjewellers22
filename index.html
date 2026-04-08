@@ -30,6 +30,23 @@
 <html lang="en">  
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>M.S. JEWELLERS</title><link rel="icon" type="image/png" href="logo.png">
   <style>
+
+#filterMenu button {
+  background: #b8860b;      /* Gold color */
+  color: white;             /* Text color */
+  border: none;             /* Border remove */
+  padding: 12px 20px;       /* Height & width */
+  margin: 5px;              /* Button ke beech gap */
+  border-radius: 8px;       /* Round corners */
+  font-size: 16px;          /* Text size */
+  cursor: pointer;
+  transition: 0.3s;         /* Hover effect smooth */
+}
+
+#filterMenu button:hover {
+  background: #ffd700;      /* Hover color */
+  color: #000;
+}
   body{
 
   margin:0;
@@ -325,7 +342,7 @@ Our mission is to provide the best quality jewellery at the best prices.
   <section id="filterMenu">
 <h2 style="text-align:center; color:#b8860b;">Our Collections</h2>
 <div style="text-align:center; margin-bottom:20px;">
-<button onclick="filterCategory('all')">Show All</button>
+
 <button onclick="filterCategory('gents-ring')">Gents Rings</button>
 <button onclick="filterCategory('ladies-ring')">Ladies Rings</button>
 <button onclick="filterCategory('necklace')">Necklaces</button>
