@@ -19,81 +19,15 @@
 }
 </script>
 
-<!-- SMALL SIDE MAP --><div id="mapSidePopup" style="position:fixed;
-
-right:-280px;
-
-bottom:20px;
-
-width:260px;
-
-background:#000;
-
-box-shadow:0 0 15px rgba(0,0,0,0.3);
-
-border-radius:10px 0 0 10px;
-
-overflow:hidden;
-
-transition:0.5s;
-
-z-index:9999;
-
-">
-
-  <div style="background:#000; color:white; padding:8px; font-size:14px;">📍 visit us
-
-  </div>  <iframesrc="https://maps.google.com/maps?q=30.000972,76.730472&z=15&output=embed"
-
-width="100%"
-
-height="150"
-
-style="border:0;">
-
-  </iframe><button onclick="closeSidePopup()" style="
-
-width:100%;
-
-padding:6px;
-
-border:none;
-
-background:#333;
-
-color:white;
-
-font-size:12px;">
-
-Close
-
-  </button></div><script>
-  
-  window.onload = function() {
-  
-    document.getElementById("mapSidePopup").style.right = "0";
-  
-  };
-  
-
-  
-  function closeSidePopup() {
-  
-    document.getElementById("mapSidePopup").style.right = "-280px";
-  
-  
-  
-</script>
-
 <style>
 body {
   margin: 0;
   font-family: 'Poppins', Arial, sans-serif;
   background: #000;
-  color: #ffffff;
+  color: #fff;
 }
 
-/* ===== BUTTON STYLE ===== */
+/* BUTTONS */
 #filterMenu{
   display:flex;
   flex-wrap:wrap;
@@ -119,60 +53,41 @@ body {
   box-shadow:0 6px 18px rgba(255,215,0,0.7);
 }
 
-/* ===== PRODUCTS GRID ===== */
+/* PRODUCTS GRID */
 .products{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
   gap:10px;
   padding:10px;
 }
-@media (min-width: 600px){
-  .products{
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (min-width: 992px){
-  .products{
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
-@media (min-width: 1200px){
-  .products{
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
+@media (min-width: 600px){ .products{ grid-template-columns: repeat(4, 1fr); } }
+@media (min-width: 992px){ .products{ grid-template-columns: repeat(5, 1fr); } }
+@media (min-width: 1200px){ .products{ grid-template-columns: repeat(6, 1fr); } }
 
-/* ===== PRODUCT IMAGES ===== */
 .products img{
   width:100%;
   height:140px;
   object-fit:cover;
   border-radius:10px;
   transition:0.3s;
+  cursor:pointer;
 }
 .products img:hover{
   transform:scale(1.05);
   box-shadow:0 10px 25px rgba(255,215,0,0.7);
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 header{
   background:linear-gradient(to right,#b8860b,#ffd700);
   padding:25px;
   text-align:center;
   color:#000;
 }
-header h1{
-  margin:0;
-  font-size:40px;
-}
-header p{
-  font-size:18px;
+header h1{ margin:0; font-size:40px; }
+header p{ font-size:18px; }
 
-}
-
-
-/* ===== CALL BUTTON ===== */
+/* CALL BUTTON */
 .call-btn{
   position:fixed;
   bottom:20px;
@@ -185,58 +100,66 @@ header p{
   font-weight:bold;
 }
 
-/* ===== SECTIONS ===== */
-section{
-  padding:60px 20px;
-  max-width:1200px;
-  margin:auto;
+/* SECTIONS */
+section{ padding:60px 20px; max-width:1200px; margin:auto; }
+h2{ text-align:center; color:#b8860b; margin-bottom:30px; font-size:32px; }
+.about, .services, .why{ text-align:center; line-height:1.8; font-size:18px; }
+
+/* CONTACT & FOOTER */
+.contact{ background:#000; text-align:center; }
+footer{ background:#000; color:#fff; text-align:center; padding:15px; }
+
+/* IMAGE VIEWER */
+#imgViewer{
+  display:none;
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.95);
+  justify-content:center; align-items:center;
+  z-index:9999;
 }
-h2{
-  text-align:center;
-  color:#b8860b;
-  margin-bottom:30px;
-  font-size:32px;
-}
-.about, .services, .why{
-  text-align:center;
-  line-height:1.8;
-  font-size:18px;
+#imgViewer img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
 }
 
-/* ===== COLLECTIONS ===== */
-.collections{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
-.collections img{
-  width:260px;
-  height:260px;
-  object-fit:cover;
-  border-radius:15px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
-}
-
-/* ===== CONTACT & FOOTER ===== */
-.contact{
+/* SIDE MAP */
+#mapSidePopup{
+  position:fixed;
+  right:-350px;
+  top:50%;
+  transform:translateY(-50%);
+  width:300px;
   background:#000;
-  text-align:center;
+  box-shadow:0 0 15px rgba(0,0,0,0.3);
+  padding:20px;
+  border-radius:10px 0 0 10px;
+  transition:0.5s;
+  z-index:9999;
 }
-footer{
-  background:#000;
-  color:#fff;
+#mapSidePopup h3{ color:#b8860b; margin-top:0; }
+#mapSidePopup a, #mapSidePopup button{
+  display:block;
+  width:100%;
+  margin-top:10px;
+  padding:8px;
   text-align:center;
-  padding:15px;
+  border-radius:5px;
+  text-decoration:none;
+  font-size:14px;
 }
+#mapSidePopup a{ background:#b8860b; color:#fff; }
+#mapSidePopup button{ background:#333; color:#fff; border:none; cursor:pointer; }
 </style>
-</head>
 
+</head>
 <body>
 
 <!-- Director Info -->
 <div style="background:#000; text-align:center; padding:10px;">
-  <strong style="color:#ffffff; font-size:16px;">Director: Sandeep Verma Laththas</strong>
+  <strong style="color:#fff; font-size:16px;">Director: Sandeep Verma Laththas</strong>
 </div>
 
 <header>  
@@ -259,9 +182,7 @@ footer{
 
 <section id="ourCollection" style="text-align:center;">
   <h2>Our Collection</h2>
-  <p style="color:#ffffff; font-size:18px; text-align:center; margin-top:10px; font-weight:bold; letter-spacing:0.5px;">
-    Click below to view designs 👇
-  </p>
+  <p style="color:#fff; font-size:18px; font-weight:bold;">Click below to view designs 👇</p>
   <p>डिज़ाइन देखने के लिए नीचे क्लिक करें👇</p>
   <div id="filterMenu">
     <button onclick="showCategory('gents-ring')">Gents Rings</button>
@@ -303,134 +224,56 @@ footer{
 
 <section style="background:#000; padding:40px; text-align:center;">
   <h2 style="color:#b8860b;">📍 Our Location</h2>
-  <a href="https://www.google.com/maps?q=30.000972,76.730472" target="_blank" 
-     style="display:inline-block; margin-top:15px; padding:10px 20px; background:#b8860b; color:white; text-decoration:none; border-radius:5px;">
-     📍 View Exact Location on Google Maps
+  <a href="https://www.google.com/maps?q=30.000972,76.730472" target="_blank" style="display:inline-block; padding:10px 20px; background:#b8860b; color:white; text-decoration:none; border-radius:5px;">
+    📍 View Exact Location on Google Maps
   </a>
   <h3 style="color:#b8860b;">🕒 Opening Hours</h3>
-  
   <p>Monday: 10:30 AM – 4:40 PM<br>
-
-  <p>Tuesday: 10:30 AM – 4:40 PM<br>
-
-  <p>Wednesday: 10:30 AM – 4:40 PM<br>
-
-  <p>Thursday: 10:30 AM – 4:40 PM<br>
-
-  <p>Friday: 10:30 AM – 4:40 PM<br>
-
-  <p>Saturday: 10:30 AM – 4:40 PM<br>
-
-  <p>Sunday: Closed<br>
-  
+     Tuesday: 10:30 AM – 4:40 PM<br>
+     Wednesday: 10:30 AM – 4:40 PM<br>
+     Thursday: 10:30 AM – 4:40 PM<br>
+     Friday: 10:30 AM – 4:40 PM<br>
+     Saturday: 10:30 AM – 4:40 PM<br>
+     Sunday: Closed
+  </p>
 </section>
 
 <section class="contact">
-  <h2 style="color:#b8860b; margin-bottom:20px;">Contact Us</h2>
+  <h2 style="color:#b8860b;">Contact Us</h2>
   <p><strong>Director:</strong> Sandeep Verma Laththas</p> 
   <p><strong>Shop Name:</strong> M.S.JEWELLERS</p>
   <p><strong>Business Handle:</strong> msjewellers22</p>
   <p><strong>Phone:</strong> <a href="tel:9466218122" style="color:#b8860b; text-decoration:none; font-weight:bold;">9466218122</a></p>
-  <p style="margin-top:15px; font-size:14px; color:#555;">For any jewellery enquiry, call us anytime between 10:00AM-7:00PM</p>
+  <p style="font-size:14px; color:#555;">For any jewellery enquiry, call us anytime between 10:00AM-7:00PM</p>
 </section>
 
-<!-- Image Viewer -->
-<div id="imgViewer" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:black; justify-content:center; align-items:center;">
-  <img id="fullImg" style="max-width:90%; max-height:90%;">
-</div>
+<!-- IMAGE VIEWER -->
+<div id="imgViewer"><img id="fullImg"></div>
 
-<!-- Call Box -->
-<div id="callBox" style="position:fixed; left:20px; bottom:20px; background:#b8860b; color:white; padding:10px 15px; border-radius:30px; box-shadow:0 0 10px rgba(0,0,0,0.3); z-index:9999; font-size:14px;">
-  <a href="tel:9466218122" style="color:white; text-decoration:none; font-weight:bold;">📞 Call Now</a>
+<!-- CALL BOX -->
+<div id="callBox"><a href="tel:9466218122">📞 Call Now</a></div>
+
+<!-- SIDE MAP POPUP -->
+<div id="mapSidePopup">
+  <h3>📍 Visit Us</h3>
+  <p>30°00'03.5"N <br>76°43'49.7"E</p>
+  <a href="https://www.google.com/maps?q=30.000972,76.730472" target="_blank">Open Exact Location</a>
+  <button onclick="closeSidePopup()">Close</button>
 </div>
 
 <footer>
   © 2026 M.S. Jewellers | All Rights Reserved
-  <p style="margin-top:10px; font-size:14px; color:#777;">Business Handle: msjewellers22</p>
+  <p style="color:#777;">Business Handle: msjewellers22</p>
 </footer>
 
-</p></footer> <!-- SIDE MAP POPUP --><div id="mapSidePopup" style="position:fixed;
-
-right:-350px;
-
-top:50%;
-
-transform:translateY(-50%);
-
-width:300px;
-
-background:#000;
-
-box-shadow:0 0 15px rgba(0,0,0,0.3);
-
-padding:20px;
-
-border-radius:10px 0 0 10px;
-
-transition:0.5s;
-
-z-index:9999;
-
-">
-
-  <h3 style="color:#b8860b; margin-top:0;">📍 Visit Us</h3>  <p style="font-size:14px;">30°00'03.5"N <br>
-
-76°43'49.7"E
-
-  </p><a href="https://www.google.com/maps?q=30.000972,76.730472"
-
-target="_blank"
-
- style="display:block;
-
- margin:10px 0;
-
- padding:8px;
-
- text-align:center;
-
- background:#b8860b;
-
- color:white;
-
- text-decoration:none;
-
- border-radius:5px;">
-
- Open Exact Location
-
-  </a><button onclick="closeSidePopup()" style="
-
-width:100%;
-
-padding:6px;
-
-border:none;
-
-background:#333;
-
-color:white;
-
-border-radius:5px;">
-
-Close
-
-  </button></div><script>
-  
-  window.onload = function() {
-  
-    document.getElementById("mapSidePopup").style.right = "0";
-  
-  };
-  
-
-  
-  function closeSidePopup() {
-  
-    document.getElementById("mapSidePopup").style.right = "-350px";
-  
-  }
 <script>
+// Side popup
+window.onload = function() {
+  document.getElementById("mapSidePopup").style.right = "0";
+};
+function closeSidePopup(){ document.getElementById("mapSidePopup").style.right="-350px"; }
+
+// Products Images
 const productsData = {
   "gents-ring": ["images/jewel12.jpg"],
   "ladies-ring": ["images/jewel17.jpg","images/ring1.jpg","images/ring2.jpg","images/ring3.jpg"],
@@ -453,17 +296,22 @@ function showCategory(cat){
     const img = document.createElement('img');
     img.src = src;
     img.onclick = function(){
-      fullImg.src = this.src;
-      viewer.style.display = 'flex';
+      if(viewer.style.display==='flex' && fullImg.src===this.src){
+        viewer.style.display='none'; fullImg.src='';
+      } else {
+        fullImg.src=this.src;
+        viewer.style.display='flex';
+      }
     };
     productsContainer.appendChild(img);
   });
 }
 
-viewer.onclick = function(){ viewer.style.display='none'; };
-
+// Close viewer if clicked outside image
+viewer.onclick = function(e){
+  if(e.target!==fullImg){ viewer.style.display='none'; fullImg.src=''; }
+};
 </script>
-
 
 </body>
 </html>
