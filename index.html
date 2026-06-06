@@ -302,7 +302,59 @@ footer{
     ✔ Honest and Transparent Dealing
   </p>
 </section>
+  
+<section id="reviews" style="text-align:center;padding:40px;">
+  <h2>Customer Reviews</h2>
 
+  <input type="text" id="name" placeholder="Your Name"
+         style="padding:10px;width:250px;"><br><br>
+
+  <div class="stars">
+    <input type="radio" id="star5" name="rating" value="5">
+    <label for="star5">★</label>
+
+    <input type="radio" id="star4" name="rating" value="4">
+    <label for="star4">★</label>
+
+    <input type="radio" id="star3" name="rating" value="3">
+    <label for="star3">★</label>
+
+    <input type="radio" id="star2" name="rating" value="2">
+    <label for="star2">★</label>
+
+    <input type="radio" id="star1" name="rating" value="1">
+    <label for="star1">★</label>
+  </div>
+
+  <textarea id="review" placeholder="Write your review"
+            style="width:250px;height:80px;"></textarea><br><br>
+
+  <button>Submit Review</button>
+</section>
+
+<style>
+.stars{
+  direction: rtl;
+  margin-bottom:15px;
+}
+
+.stars input{
+  display:none;
+}
+
+.stars label{
+  font-size:35px;
+  color:#444;
+  cursor:pointer;
+}
+
+.stars input:checked ~ label,
+.stars label:hover,
+.stars label:hover ~ label{
+  color:#FFD700;
+}
+</style>
+  
 <section style="background:#000; padding:40px; text-align:center;">
   <h2 style="color:#b8860b;">📍 Our Location</h2>
   <a href="https://www.google.com/maps?q=30.000972,76.730472" target="_blank" 
